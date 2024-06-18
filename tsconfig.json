@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "typeRoots": ["./node_modules/@types", "./src/declarations"],
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": false,    // should switch
+    "useUnknownInCatchVariables": true,
+    "noEmit": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["assets/*"],
+      "~/*": ["src/*"],
+      "hooks": ["src/hooks/index.ts"],
+      "constants": ["src/constants/index.ts"],
+      "functions": ["src/functions/index.ts"],
+      "layout": ["src/components/layout/index.ts"],
+      "page": ["src/components/page/index.ts"],
+      "shared": ["src/components/shared/index.ts"],
+      "widget": ["src/components/widget/index.ts"],
+    }
+  },
+  "include": ["src"]
+}
