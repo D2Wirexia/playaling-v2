@@ -10,13 +10,6 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, '..', 'assets'),
       '~': path.resolve(__dirname, '..', 'src'),
-      hooks: path.resolve(__dirname, '..', 'src', 'hooks', 'index.ts'),
-      constants: path.resolve(__dirname, '..', 'src', 'constants', 'index.ts'),
-      functions: path.resolve(__dirname, '..', 'src', 'functions', 'index.ts'),
-      layout: path.resolve(__dirname, '..', 'src', 'layout', 'index.ts'),
-      page: path.resolve(__dirname, '..', 'src', 'page', 'index.ts'),
-      shared: path.resolve(__dirname, '..', 'src', 'shared', 'index.ts'),
-      widget: path.resolve(__dirname, '..', 'src', 'widget', 'index.ts'),
     },
     extensions: ['.jsx', '.js', '.tsx', '.ts'],
   },

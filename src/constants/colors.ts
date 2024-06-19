@@ -1,10 +1,16 @@
 export enum Color {
   White = '#FFFFFF',
+  Lotion = '#FBFBFC',
+  AntiFlashWhite = '#ECF1F7',
   AzureWhite = '#DEE5ED',
   LightPeriwinkle = '#C2CCDB',
   CoolGray = '#8492A8',
   Quartz = '#484D5B',
+  Unbleached = '#FFDBC5',
   Mandarin = '#ED8547',
   RoyalOrange = '#EE8946',
+  TigerEye = '#E48444',
+  Chocolate = '#D76929',
   BurntSienna = '#F0785C',
+  VenetianSienna = '#E26D52',
 }
