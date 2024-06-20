@@ -23,6 +23,8 @@ export const CheckboxLabel = styled.label`
     position: absolute;
     top: 6px;
     left: 4px;
+    width: 12px;
+    height: auto;
     opacity: 0;
   }
 `
