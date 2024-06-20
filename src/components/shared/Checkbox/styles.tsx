@@ -8,6 +8,7 @@ export const CheckboxLabel = styled.label`
   font-size: 16px;
   line-height: 22px;
   color: ${Color.Quartz};
+  position: relative;
 
   &::before {
     content: '';
@@ -20,8 +21,8 @@ export const CheckboxLabel = styled.label`
 
   svg {
     position: absolute;
-    top: 16px;
-    left: 14px;
+    top: 6px;
+    left: 4px;
     opacity: 0;
   }
 `
