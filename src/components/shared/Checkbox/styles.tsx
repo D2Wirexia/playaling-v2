@@ -11,7 +11,7 @@ export const CheckboxLabel = styled.label`
 
   &::before {
     content: '';
-    width: 18px;
+    min-width: 18px;
     height: 18px;
     border-radius: 4px;
     border: 1px solid ${Color.CoolGray};
@@ -20,8 +20,9 @@ export const CheckboxLabel = styled.label`
 
   svg {
     position: absolute;
-    top: 38%;
-    left: 17%;
+    top: 16px;
+    left: 14px;
+    opacity: 0;
   }
 `
 
@@ -30,9 +31,15 @@ export const CheckboxInput = styled.input`
   opacity: 0;
   cursor: pointer;
 
-  &:checked + ${CheckboxLabel}::before {
-    background-color: ${Color.Mandarin};
-    border: 1px solid ${Color.Mandarin};
+  &:checked {
+    & + ${CheckboxLabel}::before {
+      background-color: ${Color.Mandarin};
+      border: 1px solid ${Color.Mandarin};
+    }
+
+    & + ${CheckboxLabel} svg {
+      opacity: 1;
+    }
   }
 
   &:disabled:checked {
@@ -41,8 +48,12 @@ export const CheckboxInput = styled.input`
       border: 1px solid ${Color.LightPeriwinkle};
     }
 
-    & + ${CheckboxLabel} svg path {
-      stroke: ${Color.AzureWhite};
+    & + ${CheckboxLabel} svg {
+      opacity: 1;
+
+      path {
+        stroke: ${Color.AzureWhite};
+      }
     }
   }
 
