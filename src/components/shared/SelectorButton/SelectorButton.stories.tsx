@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { fn } from '@storybook/test'
+import React, { useState } from 'react'
+import type { Meta } from '@storybook/react'
 
 import SelectorButton from './SelectorButton'
 
@@ -14,27 +14,29 @@ const meta: Meta<typeof SelectorButton> = {
   },
   tags: ['autodocs'],
   argTypes: {},
-  args: {
-    onChange: fn(),
-  },
+  args: {},
 }
 
 export default meta
-type StorySelectorButton = StoryObj<typeof SelectorButton>
 
-export const View: StorySelectorButton = {
-  args: {
-    values: [
-      { key: 0, label: 'Beginner' },
-      { key: 1, label: 'Intermediate' },
-      { key: 2, label: 'Advanced' },
-      { key: 3, label: 'Expert' },
-      { key: 4, label: 'Expeddddddddddddddddrt' },
-      { key: 5, label: 'Expersdsdsdtasd' },
-      { key: 6, label: 'Expssert' },
-      { key: 7, label: 'ssss' },
-      { key: 8, label: 'Expssss ssssert' },
-    ],
-    activeValue: 1,
-  },
+export const View = () => {
+  const [activeValue, setActiveValue] = useState<string | null>(null)
+
+  return (
+    <SelectorButton
+      activeValue={activeValue}
+      onChange={setActiveValue}
+      values={[
+        { key: 'beginner', label: 'Beginner' },
+        { key: 'intermediate', label: 'Intermediate' },
+        { key: 'advanced', label: 'Advanced' },
+        { key: 'expert', label: 'Expert' },
+        { key: 'divine', label: 'Divine' },
+        { key: 'immortal', label: 'Immortal' },
+        { key: 'arcane', label: 'Arcane' },
+        { key: 'large', label: 'Дуже довга назва для тестування переносу тексту на новий рядок' },
+        { key: 'sex', label: 'Sex' },
+      ]}
+    />
+  )
 }

@@ -3,6 +3,7 @@ import { Color } from '~/constants'
 
 interface ILabelProps {
   isActive: boolean
+  isFocus: boolean
 }
 
 export const SelectorButtonRadio = styled.input`
@@ -26,25 +27,25 @@ export const SelectorButtonLabel = styled.label<ILabelProps>`
   border: 1px solid ${Color.Mandarin};
   border-radius: 7px;
   color: ${Color.Quartz};
+  background-color: ${Color.White};
 
-  &:last-child {
-    margin-right: 0;
-  }
-
-  ${({ isActive }) =>
-    !isActive &&
+  ${({ isFocus }) =>
+    isFocus &&
     css`
-      &:hover {
-        background-color: ${Color.Unbleached};
-      }
+      outline: 2px solid ${Color.Quartz};
     `}
 
   ${({ isActive }) =>
-    isActive &&
-    css`
-      background-color: ${Color.Mandarin};
-      color: ${Color.White};
-    `}
+    isActive
+      ? css`
+          background-color: ${Color.Mandarin};
+          color: ${Color.White};
+        `
+      : css`
+          &:hover {
+            background-color: ${Color.Unbleached};
+          }
+        `}
 `
 
 export const SelectorButtonContainer = styled.div`

@@ -1,39 +1,58 @@
-import React, { useId } from 'react'
-import {
-  SelectorButtonContainer,
-  SelectorButtonLabel,
-  SelectorButtonRadio,
-} from '~/components/shared/SelectorButton/styles'
+import React, { useCallback, useId, useState } from 'react'
+import { SelectorButtonContainer, SelectorButtonLabel, SelectorButtonRadio } from './styles'
 
-export interface ISelectorButtonValues {
-  key: string | number
+export interface ISelectorButtonValues<K> {
+  key: K
   label: string
 }
 
-interface IProps {
-  values: ISelectorButtonValues[]
-  activeValue: string | number | null
-  onChange: (key: string | number) => void
+interface IProps<K> {
+  values: ISelectorButtonValues<K>[]
+  activeValue: K | null
+  onChange: (key: K) => void
 }
 
-const SelectorButton: React.FC<IProps> = ({ values, activeValue, onChange }) => {
+const SelectorButton = <K extends NonNullable<string>>({
+  activeValue,
+  values,
+  onChange,
+}: IProps<K>) => {
   const name: string = useId()
+  const [focusedKey, setFocusedKey] = useState<K | null>(null)
+
+  const handleFocus = useCallback(
+    (key: K) => {
+      setFocusedKey(key)
+      onChange(key)
+    },
+    [onChange],
+  )
+
+  const handleBlur = useCallback(() => {
+    setFocusedKey(null)
+  }, [])
 
   return (
     <SelectorButtonContainer>
       {values.map(({ key, label }) => {
         return (
-          <>
-            <SelectorButtonLabel isActive={activeValue === key} onChange={() => onChange(key)}>
-              <SelectorButtonRadio
-                key={key}
-                type="radio"
-                name={name}
-                checked={activeValue === key}
-              />
-              {label}
-            </SelectorButtonLabel>
-          </>
+          <SelectorButtonLabel
+            key={key}
+            isActive={activeValue === key}
+            isFocus={focusedKey === key}
+            onChange={() => onChange(key)}
+            onClick={handleBlur}
+          >
+            <SelectorButtonRadio
+              type="radio"
+              name={name}
+              checked={activeValue === key}
+              onChange={() => onChange(key)}
+              onFocus={() => handleFocus(key)}
+              onBlur={handleBlur}
+            />
+            {label}
+          </SelectorButtonLabel>
         )
       })}
     </SelectorButtonContainer>
