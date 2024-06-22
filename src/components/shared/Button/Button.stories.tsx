@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
 
-import Button, { ButtonShape } from './Button'
+import Button from './Button'
+import { StyleShape } from '~/constants'
 
 const meta: Meta<typeof Button> = {
   title: 'Example/Button',
@@ -24,8 +25,8 @@ const meta: Meta<typeof Button> = {
     },
     shape: {
       control: 'radio',
-      defaultValue: ButtonShape.fit,
-      options: [ButtonShape.fit, ButtonShape.expanded],
+      defaultValue: StyleShape.fit,
+      options: [StyleShape.fit, StyleShape.expanded],
     },
     size: {
       control: 'object',
@@ -45,7 +46,7 @@ export const Primary: StoryPrimary = {
     view: 'primary',
     label: 'Button',
     isLoading: false,
-    shape: ButtonShape.fit,
+    shape: StyleShape.fit,
     disabled: false,
   },
 }
@@ -55,7 +56,7 @@ export const Secondary: StorySecondary = {
     view: 'secondary',
     label: 'Button',
     isLoading: false,
-    shape: ButtonShape.fit,
+    shape: StyleShape.fit,
     disabled: false,
   },
 }

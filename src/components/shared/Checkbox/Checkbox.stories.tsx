@@ -23,8 +23,12 @@ const meta: Meta<typeof Checkbox> = {
 export default meta
 type StoryCheckbox = StoryObj<typeof Checkbox>
 
-export const View: StoryCheckbox = {
+export const Default: StoryCheckbox = {
   args: {
     label: 'MSA',
   },
+}
+
+export const Empty: StoryCheckbox = {
+  args: {},
 }

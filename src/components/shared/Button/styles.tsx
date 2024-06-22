@@ -1,16 +1,15 @@
 import styled, { css } from 'styled-components'
 import React from 'react'
-import { ButtonShape } from './Button'
-import { Color } from '~/constants'
+import { Color, StyleShape } from '~/constants'
 
-type IProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+interface IContainerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   view: 'primary' | 'secondary'
-  shape?: ButtonShape
+  shape?: StyleShape
   size?: [w: number, h: number]
   isLoading?: boolean
 }
 
-export const TargetContainer = styled.button<IProps>`
+export const TargetContainer = styled.button<IContainerProps>`
   border-radius: 7px;
   font-size: 18px;
   line-height: 18px;
@@ -77,14 +76,14 @@ export const TargetContainer = styled.button<IProps>`
     `}
 
   ${({ shape, size }) =>
-    shape === ButtonShape.fit &&
+    shape === StyleShape.fit &&
     css`
       width: ${size ? size[0] ?? 308 : 308}px;
       height: ${size ? size[1] ?? 64 : 64}px;
     `}  
   
   ${({ shape, size }) =>
-    shape === ButtonShape.expanded &&
+    shape === StyleShape.expanded &&
     css`
       min-width: ${size ? size[0] ?? 308 : 308}px;
       width: 100%;

@@ -1,15 +1,11 @@
 import React from 'react'
 import ButtonPrimary from './ButtonPrimary'
 import ButtonSecondary from './ButtonSecondary'
-
-export enum ButtonShape {
-  expanded = 'expanded',
-  fit = 'fit',
-}
+import { StyleShape } from '~/constants'
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   label: string
-  shape?: ButtonShape
+  shape?: StyleShape
   size?: [w: number, h: number]
   isLoading?: boolean
 }

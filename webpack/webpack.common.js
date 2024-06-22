@@ -46,7 +46,7 @@ module.exports = {
     new HTMLWebpackPlugin({
       favicon: path.resolve(__dirname, '..', 'public', 'favicon.png'),
       filename: 'index.html',
-      template: path.resolve(__dirname, '..', 'src', 'index.html'),
+      template: path.resolve(__dirname, '..', 'public', 'index.html'),
     }),
     new HotModuleReplacementPlugin(),
     new ForkTsCheckerWebpackPlugin({

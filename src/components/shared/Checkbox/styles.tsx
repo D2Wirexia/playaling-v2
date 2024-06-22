@@ -1,5 +1,19 @@
 import styled from 'styled-components'
 import { Color } from '~/constants'
+import { ReactComponent as Checkmark } from '@/icons/checkmark.svg'
+
+export const LabelName = styled.span`
+  margin-left: 6px;
+`
+
+export const CheckmarkIcon = styled(Checkmark)`
+  position: absolute;
+  top: 6px;
+  left: 4px;
+  width: 12px;
+  height: auto;
+  opacity: 0;
+`
 
 export const CheckboxLabel = styled.label`
   display: flex;
@@ -16,16 +30,6 @@ export const CheckboxLabel = styled.label`
     height: 18px;
     border-radius: 4px;
     border: 1px solid ${Color.CoolGray};
-    margin-right: 6px;
-  }
-
-  svg {
-    position: absolute;
-    top: 6px;
-    left: 4px;
-    width: 12px;
-    height: auto;
-    opacity: 0;
   }
 `
 
@@ -40,7 +44,7 @@ export const CheckboxInput = styled.input`
       border: 1px solid ${Color.Mandarin};
     }
 
-    & + ${CheckboxLabel} svg {
+    & + ${CheckboxLabel} ${CheckmarkIcon} {
       opacity: 1;
     }
   }
@@ -51,7 +55,7 @@ export const CheckboxInput = styled.input`
       border: 1px solid ${Color.LightPeriwinkle};
     }
 
-    & + ${CheckboxLabel} svg {
+    & + ${CheckboxLabel} ${CheckmarkIcon} {
       opacity: 1;
 
       path {
