@@ -33,7 +33,7 @@ export const TabBarButton = styled.button<IButtonProps>`
       : css`
           &:hover,
           &:focus {
-            background-color: red;
+            background-color: ${Color.Gainsboro};
           }
         `}
 `
@@ -49,7 +49,7 @@ export const TabBarContainer = styled.div`
   padding: 4px;
   gap: 4px;
 
-  @media (max-width: 728px) {
+  @media (max-width: 768px) {
     flex-wrap: nowrap;
   }
 `
