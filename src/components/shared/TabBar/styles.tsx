@@ -26,7 +26,7 @@ export const TabBarButton = styled.button<IButtonProps>`
   color: ${Color.CoolGray};
   overflow-y: hidden;
 
-  @media (max-width: 728px) {
+  @media (max-width: 768px) {
     min-width: 205px;
     max-width: 205px;
     color: ${Color.Quartz};
@@ -40,7 +40,7 @@ export const TabBarButton = styled.button<IButtonProps>`
           background-color: ${Color.White};
           color: ${Color.Quartz};
 
-          @media (max-width: 728px) {
+          @media (max-width: 768px) {
             background-color: ${Color.Quartz};
             color: ${Color.White};
           }
@@ -66,12 +66,13 @@ export const TabBarContainer = styled.div`
   @media (max-width: 768px) {
     flex-wrap: nowrap;
     overflow-x: auto;
-    width: auto;
-    background-color: ${Color.AntiFlashWhite};
+    width: 100%;
+    border-radius: 0;
+    background-color: transparent;
+    padding: 4px 20px;
 
     &::-webkit-scrollbar {
-      width: 0;
-      height: 0;
+      display: none;
     }
   }
 `
