@@ -17,6 +17,11 @@ export const GlobalStyles = createGlobalStyle`
     font-family: var(--font-english), serif;
     background: #F5F5F5;
   }
+  
+  button {
+    border: none;
+    outline: none;
+  }
 
   input {
     outline: none;
