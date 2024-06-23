@@ -18,8 +18,7 @@ export const TabBarButton = styled.button<IButtonProps>`
   line-height: 22px;
   text-align: center;
   height: 36px;
-  min-width: 230px;
-  max-width: 230px;
+  width: 230px;
   cursor: pointer;
   border-radius: 7px;
   background-color: transparent;
