@@ -18,17 +18,32 @@ export const TabBarButton = styled.button<IButtonProps>`
   line-height: 22px;
   text-align: center;
   height: 36px;
-  width: 230px;
+  min-width: 230px;
+  max-width: 230px;
   cursor: pointer;
   border-radius: 7px;
   background-color: transparent;
   color: ${Color.CoolGray};
+  overflow-y: hidden;
+
+  @media (max-width: 728px) {
+    min-width: 205px;
+    max-width: 205px;
+    color: ${Color.Quartz};
+    line-height: 16px;
+    font-weight: 500;
+  }
 
   ${({ isActive }) =>
     isActive
       ? css`
           background-color: ${Color.White};
           color: ${Color.Quartz};
+
+          @media (max-width: 728px) {
+            background-color: ${Color.Quartz};
+            color: ${Color.White};
+          }
         `
       : css`
           &:hover,
@@ -43,7 +58,6 @@ export const TabBarContainer = styled.div`
   flex-wrap: wrap;
   align-items: center;
   width: fit-content;
-  height: fit-content;
   background-color: ${Color.AzureWhite};
   border-radius: 7px;
   padding: 4px;
@@ -51,5 +65,13 @@ export const TabBarContainer = styled.div`
 
   @media (max-width: 728px) {
     flex-wrap: nowrap;
+    overflow-x: auto;
+    width: auto;
+    background-color: ${Color.AntiFlashWhite};
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
   }
 `
