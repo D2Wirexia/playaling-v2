@@ -5,7 +5,7 @@ import { StyleShape } from '~/constants'
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   label: string
-  shape?: StyleShape
+  shape: StyleShape
   size?: [w: number, h: number]
   isLoading?: boolean
 }

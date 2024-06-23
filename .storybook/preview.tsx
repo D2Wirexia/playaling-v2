@@ -1,13 +1,15 @@
 import React from 'react'
 import { GlobalStyles } from '~/styles'
 import type { Preview } from '@storybook/react'
-import type {PartialStoryFn, StoryContext} from "@storybook/types"
+import type { PartialStoryFn, StoryContext } from '@storybook/types'
+import { Provider } from 'react-redux'
+import { store } from '~/store'
 
-const withGlobalStyle = (Story: PartialStoryFn<any, any>, context: StoryContext) => (
-  <>
+const withProviders = (Story: PartialStoryFn<any, any>, context: StoryContext) => (
+  <Provider store={store}>
     <GlobalStyles />
     <Story {...context} />
-  </>
+  </Provider>
 )
 
 export const parameters = {
@@ -24,9 +26,9 @@ export const parameters = {
       date: /Date$/,
     },
   },
-};
+}
 
-export const decorators = [withGlobalStyle]
+export const decorators = [withProviders]
 
 const preview: Preview = {
   parameters: {

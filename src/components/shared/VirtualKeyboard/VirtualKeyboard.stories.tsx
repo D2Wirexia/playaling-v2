@@ -4,7 +4,7 @@ import { fn } from '@storybook/test'
 import VirtualKeyboard from './VirtualKeyboard'
 
 const meta: Meta<typeof VirtualKeyboard> = {
-  title: 'Example/VirtualKeyboard',
+  title: 'Example/Virtual Keyboard',
   component: VirtualKeyboard,
   parameters: {
     layout: 'centered',

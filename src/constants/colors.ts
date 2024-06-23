@@ -6,6 +6,7 @@ export enum Color {
   LightPeriwinkle = '#C2CCDB',
   CoolGray = '#8492A8',
   Quartz = '#484D5B',
+  EerieBlack = '#191B1F',
   Unbleached = '#FFDBC5',
   Mandarin = '#ED8547',
   RoyalOrange = '#EE8946',
@@ -13,4 +14,5 @@ export enum Color {
   Chocolate = '#D76929',
   BurntSienna = '#F0785C',
   VenetianSienna = '#E26D52',
+  GreenSheen = '#61BF9A',
 }

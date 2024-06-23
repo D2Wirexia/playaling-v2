@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Disallow: /login$
+Disallow: /signup$
+Disallow: /signup-*
+Disallow: /forgot-password$
+Disallow: /forgot-password/*
+Disallow: /confirm-email$
+Disallow: /confirm-email/*
+Disallow: /upgrade-plan$
+Disallow: /upgrade-card$
+Disallow: /favorites$
+Disallow: /favorites/*
+Disallow: /videos/video/*
+Disallow: /profile*
+Disallow: /billing-portal-redirection$
