@@ -4,6 +4,7 @@ export const GlobalStyles = createGlobalStyle`
   :root {
     --font-arabic: "Adobe Arabic";
     --font-english: "Hind Madurai";
+    --transition: all 0.3s;
   }
   
   * {
