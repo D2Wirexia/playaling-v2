@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { CloseIcon, DropDownContainer, StyledSelect } from './styles'
+import { CloseIcon, DownIcon, DropDownContainer, UpIcon } from './styles'
 import { Checkbox } from '~/components/shared'
+import Select from 'react-dropdown-select'
 
 interface ISelectOptions {
   value: string
@@ -26,29 +27,35 @@ const DropDown: React.FC<IProps> = ({ options }) => {
     setCurrentValues(values.map((value) => value.value))
   }
 
-  const customContentRenderer = (props: any) => (
-    <span>Difficulty {props.state.values.length ? `(${props.state.values.length})` : ''}</span>
+  const customContentRenderer = (prop: any) => (
+    <span>Difficulty {prop.state.values.length ? `(${prop.state.values.length})` : null}</span>
   )
 
-  const customItemRender = (props: any) => (
-    <div onChange={() => props.methods.addItem(props.item)}>
-      <Checkbox label={props.item.label} checked={props.methods.isSelected(props.item)} />
+  const customItemRender = (prop: any) => (
+    <div onChange={() => prop.methods.addItem(prop.item)}>
+      <Checkbox label={prop.item.label} checked={prop.methods.isSelected(prop.item)} />
     </div>
   )
 
-  const customClearRenderer = (props: any) => props.state.values.length && <CloseIcon />
+  const customClearRenderer = (prop: any) =>
+    prop.state.values.length ? <CloseIcon onClick={prop.methods.clearAll} /> : null
+
+  const customDropdownHandleRenderer = (prop: any) =>
+    prop.state.dropdown ? <UpIcon /> : <DownIcon />
 
   return (
-    <DropDownContainer>
-      <StyledSelect
+    <DropDownContainer isActive={currentValues.length !== 0}>
+      <Select
         values={getValue()}
         onChange={handleChange}
         contentRenderer={customContentRenderer}
         itemRenderer={customItemRender}
         clearRenderer={customClearRenderer}
+        dropdownHandleRenderer={customDropdownHandleRenderer}
         options={options}
         multi
-      ></StyledSelect>
+        clearable
+      ></Select>
     </DropDownContainer>
   )
 }
