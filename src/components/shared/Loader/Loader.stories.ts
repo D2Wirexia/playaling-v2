@@ -15,7 +15,7 @@ const meta: Meta<typeof Loader> = {
   argTypes: {
     size: {
       control: 'number',
-      defaultValue: 20,
+      defaultValue: 80,
     },
   },
   args: {},
@@ -27,5 +27,6 @@ type StorySimple = StoryObj<typeof Loader>
 export const Simple: StorySimple = {
   args: {
     view: 'simple',
+    size: 80,
   },
 }
