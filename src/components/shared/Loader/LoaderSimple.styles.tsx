@@ -40,13 +40,6 @@ export const Dot = styled.span<ILoaderProps & { index: number }>`
   animation: ${dotAnimation} 1.2s linear infinite;
   animation-delay: ${({ index }) => `${index * 0.1}s`};
 
-  ${({ size }) =>
-    size &&
-    css`
-      width: ${size * 0.125}px;
-      height: ${size * 0.125}px;
-    `}
-
   ${({ size, index }) => {
     const radius = size / 2 - 5
     const angle = (index / 12) * 360
@@ -55,7 +48,9 @@ export const Dot = styled.span<ILoaderProps & { index: number }>`
     const top = Math.sin(radians) * radius
     const left = Math.cos(radians) * radius
 
-    return `
+    return css`
+      width: ${size * 0.125}px;
+      height: ${size * 0.125}px;
       top: calc(50% - ${size * 0.0625}px + ${top}px);
       left: calc(50% - ${size * 0.0625}px + ${left}px);
     `

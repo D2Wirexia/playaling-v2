@@ -30,3 +30,10 @@ export const Simple: StorySimple = {
     size: 80,
   },
 }
+
+export const Normal: StorySimple = {
+  args: {
+    view: 'normal',
+    size: 80,
+  },
+}
