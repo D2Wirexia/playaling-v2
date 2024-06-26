@@ -24,11 +24,11 @@ export const View = () => {
 
   return (
     <TabBar activeTab={activeTab} onChange={setActiveTab}>
-      <TabBar.Item id="0" label="Word sets by function (22)" />
-      <TabBar.Item id="1" label="Al-Kitaab Alif Baa (10)" />
-      <TabBar.Item id="2" label="Al-Kitaab Part One (13)" />
-      <TabBar.Item id="3" label="Al-Kitaab Part Two (10)" />
-      <TabBar.Item id="4" label="Al-Kitaab Part Three (10)" />
+      <TabBar.Item value="0" label="Word sets by function (22)" />
+      <TabBar.Item value="1" label="Al-Kitaab Alif Baa (10)" />
+      <TabBar.Item value="2" label="Al-Kitaab Part One (13)" />
+      <TabBar.Item value="3" label="Al-Kitaab Part Two (10)" />
+      <TabBar.Item value="4" label="Al-Kitaab Part Three (10)" />
     </TabBar>
   )
 }

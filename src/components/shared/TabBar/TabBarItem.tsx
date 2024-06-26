@@ -3,19 +3,19 @@ import { TabBarButton } from './styles'
 import { type ITabBarContext, TabBarContext } from './TabBar'
 
 interface IProps {
-  id: string
+  value: string
   label: string
 }
 
-const TabBarItem: React.FC<IProps> = ({ id, label }) => {
+const TabBarItem: React.FC<IProps> = ({ value, label }) => {
   const { activeTab, onChange } = useContext<ITabBarContext>(TabBarContext)
 
   const handleClick = useCallback(() => {
-    onChange(id)
-  }, [id, onChange])
+    onChange(value)
+  }, [value, onChange])
 
   return (
-    <TabBarButton onClick={handleClick} isActive={activeTab === id}>
+    <TabBarButton onClick={handleClick} isActive={activeTab === value}>
       {label}
     </TabBarButton>
   )

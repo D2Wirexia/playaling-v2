@@ -1,8 +1,14 @@
 import React from 'react'
 import { Container } from './styles'
 
-const Shimmer: React.FC = () => {
-  return <Container />
+export interface IShimmer {
+  ws: number // Width size
+  hs: number // Height size
+  br: number // Border radius
+}
+
+const Shimmer: React.FC<IShimmer> = (props) => {
+  return <Container {...props} />
 }
 
 export default React.memo(Shimmer)

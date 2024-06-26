@@ -20,5 +20,9 @@ export default meta
 type StoryShimmer = StoryObj<typeof Shimmer>
 
 export const View: StoryShimmer = {
-  args: {},
+  args: {
+    ws: 270,
+    hs: 200,
+    br: 7,
+  },
 }
