@@ -1,5 +1,6 @@
 export enum Color {
   White = '#FFFFFF',
+  Cultured = '#F5F5F5',
   Lotion = '#FBFBFC',
   Gainsboro = '#F1F2F6',
   AntiFlashWhite = '#ECF1F7',

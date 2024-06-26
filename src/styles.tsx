@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { Color } from '~/constants'
 
 export const GlobalStyles = createGlobalStyle`
   :root {
@@ -10,12 +11,12 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--font-english), serif;
+    font-family: var(--font-english), sans-serif;
   }
   
   body {
-    font-family: var(--font-english), serif;
-    background: #F5F5F5;
+    font-family: var(--font-english), sans-serif;
+    background: ${Color.Cultured};
   }
   
   button {
