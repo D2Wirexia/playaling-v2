@@ -7,3 +7,5 @@ export * from './SelectorButton'
 export * from './ToastMessage'
 export * from './TabBar'
 export * from './DropDown'
+// Loader export
+export * from './Tooltip'
