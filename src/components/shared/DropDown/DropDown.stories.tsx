@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import type { Meta } from '@storybook/react'
 
 import DropDown from './DropDown'
 
 const meta: Meta<typeof DropDown> = {
-  title: 'Example/DropDown',
+  title: 'Example/Drop Down',
   component: DropDown,
   parameters: {
     layout: 'centered',
@@ -19,13 +19,38 @@ const meta: Meta<typeof DropDown> = {
 
 export default meta
 
-const options = [
-  { value: 'beginner', label: 'Beginner' },
-  { value: 'intermediate', label: 'Intermediate' },
-  { value: 'advanced', label: 'Advanced' },
-  { value: 'expert', label: 'Expert' },
-]
+export const Multi = () => {
+  const [dialects, setDialects] = useState<string[]>(['advanced'])
 
-export const View = () => {
-  return <DropDown options={options} />
+  return (
+    <DropDown
+      placeholder="Dialects"
+      options={[
+        { value: 'beginner', label: 'Beginner' },
+        { value: 'intermediate', label: 'Intermediate' },
+        { value: 'advanced', label: 'Advanced' },
+        { value: 'expert', label: 'Expert' },
+      ]}
+      activeOptions={dialects}
+      onChange={setDialects}
+      multi
+    />
+  )
+}
+
+export const Single = () => {
+  const [sort, setSort] = useState<string[]>([])
+
+  return (
+    <DropDown
+      placeholder="Sort"
+      options={[
+        { value: 'popularity', label: 'Popularity' },
+        { value: 'newest', label: 'Newest' },
+        { value: 'oldest', label: 'Oldest' },
+      ]}
+      activeOptions={sort}
+      onChange={setSort}
+    />
+  )
 }
