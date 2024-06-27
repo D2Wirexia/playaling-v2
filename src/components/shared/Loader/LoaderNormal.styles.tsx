@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import { ILoaderProps } from '~/components/shared/Loader/Loader'
+import { ILoaderProps } from './Loader'
 import { Color } from '~/constants'
 
 const spin = keyframes`
@@ -9,14 +9,6 @@ const spin = keyframes`
   100% {
     opacity: 0;
   }
-`
-
-export const BarContainer = styled.div<ILoaderProps>`
-  position: relative;
-  color: ${Color.Quartz};
-  display: flex;
-  width: ${({ size }) => size}px;
-  height: ${({ size }) => size}px;
 `
 
 export const Bar = styled.span<ILoaderProps & { index: number }>`
@@ -34,4 +26,12 @@ export const Bar = styled.span<ILoaderProps & { index: number }>`
     border-radius: 50%;
     background: ${Color.Quartz};
   }
+`
+
+export const BarContainer = styled.div<ILoaderProps>`
+  position: relative;
+  color: ${Color.Quartz};
+  display: flex;
+  width: ${({ size }) => size}px;
+  height: ${({ size }) => size}px;
 `
