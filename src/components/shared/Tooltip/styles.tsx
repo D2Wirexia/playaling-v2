@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import { Color } from '~/constants'
 import { Tooltip as ReactTooltip } from 'react-tooltip'
+import hexToRgba from 'hex-to-rgba'
 
 interface ITooltipProps {
   variant: 'black' | 'white'
@@ -19,12 +20,12 @@ export const TooltipContainer = styled.div<ITooltipProps>`
     font-size: 14px;
     line-height: 22px;
     border-radius: 7px;
-    box-shadow: 0 5px 14px rgba(25, 27, 31, 0.17);
+    box-shadow: 0 5px 14px ${hexToRgba(Color.EerieBlack, 0.17)};
 
     ${({ variant }) =>
       variant === 'black'
         ? css`
-            background-color: rgba(72, 77, 91, 0.9);
+            background-color: ${hexToRgba(Color.Quartz, 0.9)};
             color: ${Color.White};
           `
         : css`
