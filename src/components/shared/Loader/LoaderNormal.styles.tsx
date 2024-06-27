@@ -32,6 +32,7 @@ export const BarContainer = styled.div<ILoaderProps>`
   position: relative;
   color: ${Color.Quartz};
   display: flex;
+  justify-content: center;
   width: ${({ size }) => size}px;
   height: ${({ size }) => size}px;
 `
