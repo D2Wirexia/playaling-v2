@@ -1,5 +1,8 @@
-import React, { ReactNode, useId } from 'react'
-import { StyledTooltip, TargetElement, TooltipContainer } from '~/components/shared/Tooltip/styles'
+import React, { ReactNode, useMemo } from 'react'
+import { TooltipContainer } from './styles'
+import { Color } from '~/constants'
+import hexToRgba from 'hex-to-rgba'
+import { type PlacesType } from 'react-tooltip'
 
 export enum TooltipStyle {
   Black = 'black',
@@ -7,37 +10,47 @@ export enum TooltipStyle {
 }
 
 interface IProps {
+  tooltipId: string
   children: string | ReactNode
-  elem: string | ReactNode
   variant: TooltipStyle
   openOnClick?: boolean
   disabled?: boolean
   clickable?: boolean
+  noArrow?: boolean
+  place?: PlacesType
 }
 
 const Tooltip: React.FC<IProps> = ({
+  tooltipId,
   children,
-  elem,
   variant,
-  openOnClick,
-  disabled,
-  clickable,
+  openOnClick = false,
+  disabled = false,
+  clickable = false,
+  noArrow = false,
+  place = 'bottom',
 }) => {
-  const id: string = useId()
+  const arrowColor: string = useMemo(() => {
+    switch (variant) {
+      case TooltipStyle.Black:
+        return hexToRgba(Color.Quartz, 0.9)
+      case TooltipStyle.White:
+        return Color.White
+    }
+  }, [variant])
 
   return (
-    <TooltipContainer variant={variant}>
-      <TargetElement data-tooltip-id={id}>{elem}</TargetElement>
-      <StyledTooltip
-        id={id}
-        openOnClick={openOnClick}
-        hidden={disabled}
-        noArrow
-        clickable={clickable}
-        place="bottom"
-      >
-        {children}
-      </StyledTooltip>
+    <TooltipContainer
+      variant={variant}
+      id={tooltipId}
+      openOnClick={openOnClick}
+      hidden={disabled}
+      noArrow={noArrow}
+      clickable={clickable}
+      place={place}
+      arrowColor={arrowColor}
+    >
+      {children}
     </TooltipContainer>
   )
 }
