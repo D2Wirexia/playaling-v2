@@ -4,7 +4,7 @@ import type { Meta } from '@storybook/react'
 import ModeBar from './ModeBar'
 
 const meta: Meta<typeof ModeBar> = {
-  title: 'Shared/ModeBar',
+  title: 'Widgets/Mode Bar',
   component: ModeBar,
   parameters: {
     layout: 'centered',
