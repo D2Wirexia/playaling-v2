@@ -4,7 +4,7 @@ import type { Meta } from '@storybook/react'
 import SelectorButton from './SelectorButton'
 
 const meta: Meta<typeof SelectorButton> = {
-  title: 'Example/Selector Button',
+  title: 'Shared/Selector Button',
   component: SelectorButton,
   parameters: {
     layout: 'centered',

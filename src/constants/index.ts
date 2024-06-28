@@ -1,4 +1,4 @@
 export * from './colors'
-export * from './style-shape'
+export * from './styles'
 export * from './routes'
 export * from './settings'

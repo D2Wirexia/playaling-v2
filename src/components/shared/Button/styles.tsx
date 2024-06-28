@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components'
 import React from 'react'
-import { Color, StyleShape } from '~/constants'
+import { Color, Shape } from '~/constants'
 
 interface IContainerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   view: 'primary' | 'secondary'
-  shape?: StyleShape
+  shape?: Shape
   size?: [w: number, h: number]
   isLoading?: boolean
 }
@@ -76,14 +76,14 @@ export const TargetContainer = styled.button<IContainerProps>`
     `}
 
   ${({ shape, size }) =>
-    shape === StyleShape.fit &&
+    shape === Shape.fit &&
     css`
       width: ${size ? size[0] ?? 308 : 308}px;
       height: ${size ? size[1] ?? 64 : 64}px;
     `}  
   
   ${({ shape, size }) =>
-    shape === StyleShape.expanded &&
+    shape === Shape.expanded &&
     css`
       min-width: ${size ? size[0] ?? 308 : 308}px;
       width: 100%;

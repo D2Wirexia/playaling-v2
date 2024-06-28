@@ -1,11 +1,11 @@
 import React from 'react'
 import ButtonPrimary from './ButtonPrimary'
 import ButtonSecondary from './ButtonSecondary'
-import { StyleShape } from '~/constants'
+import { Shape } from '~/constants'
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   label: string
-  shape: StyleShape
+  shape: Shape
   size?: [w: number, h: number]
   isLoading?: boolean
 }

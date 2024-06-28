@@ -4,7 +4,7 @@ import type { Meta } from '@storybook/react'
 import DropDown from './DropDown'
 
 const meta: Meta<typeof DropDown> = {
-  title: 'Example/Drop Down',
+  title: 'Shared/Drop Down',
   component: DropDown,
   parameters: {
     layout: 'centered',

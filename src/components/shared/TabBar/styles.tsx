@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { Color } from '~/constants'
+import { Color, Media } from '~/constants'
 import hexToRgba from 'hex-to-rgba'
 
 interface IButtonProps {
@@ -24,7 +24,7 @@ export const TabBarButton = styled.button<IButtonProps>`
   color: ${Color.CoolGray};
   overflow-y: hidden;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${Media.tablet}) {
     width: 205px;
     color: ${Color.Quartz};
     line-height: 16px;
@@ -37,7 +37,7 @@ export const TabBarButton = styled.button<IButtonProps>`
           background-color: ${Color.White};
           color: ${Color.Quartz};
 
-          @media (max-width: 768px) {
+          @media (max-width: ${Media.tablet}) {
             background-color: ${Color.Quartz};
             color: ${Color.White};
           }
@@ -47,7 +47,7 @@ export const TabBarButton = styled.button<IButtonProps>`
           &:focus {
             background-color: ${Color.Gainsboro};
 
-            @media (max-width: 768px) {
+            @media (max-width: ${Media.tablet}) {
               background-color: ${hexToRgba(Color.Quartz, 0.2)};
             }
           }
@@ -64,7 +64,7 @@ export const TabBarContainer = styled.div`
   padding: 4px;
   gap: 4px;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${Media.tablet}) {
     flex-wrap: nowrap;
     overflow-x: auto;
     width: 100%;

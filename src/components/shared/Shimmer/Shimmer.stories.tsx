@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import Shimmer from './Shimmer'
 
 const meta: Meta<typeof Shimmer> = {
-  title: 'Example/Shimmer',
+  title: 'Shared/Shimmer',
   component: Shimmer,
   parameters: {
     layout: 'centered',

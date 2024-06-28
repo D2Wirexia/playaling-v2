@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { Color } from '~/constants'
+import { Color, Media } from '~/constants'
 import { ReactComponent as CheckmarkIcon } from '@/icons/checkmark.svg'
 
 interface IStepProps {
@@ -12,7 +12,7 @@ export const Checkmark = styled(CheckmarkIcon)`
   height: 21px;
   transition: var(--transition);
 
-  @media (max-width: 768px) {
+  @media (max-width: ${Media.tablet}) {
     width: 21px;
     height: 13px;
   }
@@ -34,7 +34,7 @@ export const Step = styled.div<IStepProps>`
   position: relative;
   transition: var(--transition);
 
-  @media (max-width: 768px) {
+  @media (max-width: ${Media.tablet}) {
     width: 40px;
     height: 40px;
     border-width: 2px;
@@ -53,7 +53,7 @@ export const Step = styled.div<IStepProps>`
     left: 57px;
     transition: var(--transition);
 
-    @media (max-width: 768px) {
+    @media (max-width: ${Media.tablet}) {
       width: 21px;
       height: 1px;
       left: 38px;
@@ -79,11 +79,11 @@ export const Step = styled.div<IStepProps>`
   ${({ isCompleted }) =>
     isCompleted &&
     css`
-      border-color: #70b202;
-      background-color: #70b202;
+      border-color: ${Color.AppleGreen};
+      background-color: ${Color.AppleGreen};
 
       &::after {
-        background-color: #70b202;
+        background-color: ${Color.AppleGreen};
       }
     `}
 `

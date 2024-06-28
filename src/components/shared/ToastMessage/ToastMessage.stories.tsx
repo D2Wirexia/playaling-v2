@@ -2,11 +2,11 @@ import React, { useCallback } from 'react'
 import type { Meta } from '@storybook/react'
 import { actions, useAppDispatch } from '~/store'
 import { Button } from '~/components/shared'
-import { StyleShape } from '~/constants'
+import { Shape } from '~/constants'
 import ToastMessage from './ToastMessage'
 
 const meta: Meta<typeof ToastMessage> = {
-  title: 'Example/Toast Message',
+  title: 'Shared/Toast Message',
   component: ToastMessage,
   parameters: {
     layout: 'centered',
@@ -46,12 +46,12 @@ export const View = () => {
       <Button.Secondary
         onClick={() => pushMessage('default')}
         label="Push default message"
-        shape={StyleShape.fit}
+        shape={Shape.fit}
       />
       <Button.Primary
         onClick={() => pushMessage('success')}
         label="Push success message"
-        shape={StyleShape.fit}
+        shape={Shape.fit}
       />
       <ToastMessage />
     </div>

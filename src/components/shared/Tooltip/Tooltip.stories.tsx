@@ -3,10 +3,10 @@ import type { Meta } from '@storybook/react'
 
 import Tooltip, { TooltipStyle } from './Tooltip'
 import { Button } from '~/components/shared'
-import { StyleShape } from '~/constants'
+import { Shape } from '~/constants'
 
 const meta: Meta<typeof Tooltip> = {
-  title: 'Example/Tooltip',
+  title: 'Shared/Tooltip',
   component: Tooltip,
   parameters: {
     layout: 'centered',
@@ -47,7 +47,7 @@ export const Black = () => {
   const id: string = useId()
   return (
     <>
-      <Button.Primary data-tooltip-id={id} label="Hovering target" shape={StyleShape.fit} />
+      <Button.Primary data-tooltip-id={id} label="Hovering target" shape={Shape.fit} />
       <Tooltip tooltipId={id} variant={TooltipStyle.Black}>
         Tooltip Content!
       </Tooltip>
@@ -60,7 +60,7 @@ export const White = () => {
 
   return (
     <>
-      <Button.Secondary data-tooltip-id={id} label="Clickable target" shape={StyleShape.expanded} />
+      <Button.Secondary data-tooltip-id={id} label="Clickable target" shape={Shape.expanded} />
       <Tooltip tooltipId={id} variant={TooltipStyle.White} openOnClick clickable>
         Tooltip Content!
       </Tooltip>
@@ -74,17 +74,9 @@ export const Multi = () => {
 
   return (
     <>
-      <Button.Primary
-        data-tooltip-id={hoverId}
-        label="Hovering target"
-        shape={StyleShape.expanded}
-      />
+      <Button.Primary data-tooltip-id={hoverId} label="Hovering target" shape={Shape.expanded} />
       <Tooltip tooltipId={hoverId} variant={TooltipStyle.White} clickable>
-        <Button.Secondary
-          data-tooltip-id={clickId}
-          label="Clickable target"
-          shape={StyleShape.fit}
-        />
+        <Button.Secondary data-tooltip-id={clickId} label="Clickable target" shape={Shape.fit} />
         <Tooltip tooltipId={clickId} variant={TooltipStyle.Black} openOnClick clickable>
           Tooltip Content!
         </Tooltip>

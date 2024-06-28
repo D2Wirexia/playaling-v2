@@ -16,5 +16,6 @@ export enum Color {
   Chocolate = '#D76929',
   BurntSienna = '#F0785C',
   VenetianSienna = '#E26D52',
+  AppleGreen = '#70B202',
   GreenSheen = '#61BF9A',
 }

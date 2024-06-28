@@ -4,7 +4,7 @@ import type { Meta } from '@storybook/react'
 import TabBar from './TabBar'
 
 const meta: Meta<typeof TabBar> = {
-  title: 'Example/Tab Bar',
+  title: 'Shared/Tab Bar',
   component: TabBar,
   parameters: {
     layout: 'centered',
