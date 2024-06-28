@@ -5,7 +5,7 @@ import { ILoaderProps } from './Loader'
 const LoaderSimple: React.FC<ILoaderProps> = ({ size }) => {
   return (
     <LoaderContainer size={size}>
-      <LoaderItem size={size} />
+      <LoaderItem />
     </LoaderContainer>
   )
 }
