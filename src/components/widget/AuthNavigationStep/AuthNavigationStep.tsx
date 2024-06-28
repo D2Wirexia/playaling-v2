@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Route } from '~/constants'
-import { Checkmark, Step, StepsContainer } from '~/components/widget/AuthNavigationStep/styles'
+import { Checkmark, Step, StepsContainer } from './styles'
 
 const steps: string[][] = [
   [Route.SignUp],
@@ -23,7 +23,7 @@ const AuthNavigationStep: React.FC = () => {
 
   return (
     <StepsContainer>
-      {steps.map((_, i) => (
+      {steps.map((_: string[], i: number) => (
         <Step key={i} isActive={currentStep === i + 1} isCompleted={i + 1 < currentStep}>
           {i + 1 < currentStep ? <Checkmark /> : i + 1}
         </Step>
