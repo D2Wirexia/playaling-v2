@@ -4,12 +4,15 @@ import type { Preview } from '@storybook/react'
 import type { PartialStoryFn, StoryContext } from '@storybook/types'
 import { Provider } from 'react-redux'
 import { store } from '~/store'
+import { BrowserRouter } from 'react-router-dom'
 
 const withProviders = (Story: PartialStoryFn<any, any>, context: StoryContext) => (
-  <Provider store={store}>
-    <GlobalStyles />
-    <Story {...context} />
-  </Provider>
+  <BrowserRouter>
+    <Provider store={store}>
+      <GlobalStyles />
+      <Story {...context} />
+    </Provider>
+  </BrowserRouter>
 )
 
 export const parameters = {

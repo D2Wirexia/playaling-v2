@@ -1,17 +1,16 @@
 import styled, { keyframes } from 'styled-components'
-import { IShimmer } from './Shimmer'
 
 const shimmer = keyframes`
-  to { 
+  to {
     background-position-x: 0;
   }
 `
 
-export const Container = styled.div<IShimmer>`
+export const Container = styled.div`
   display: inline-block;
   position: relative;
-  height: 280px;
-  width: 200px;
+  width: 280px;
+  height: 200px;
   border-radius: 7px;
 
   background: linear-gradient(-45deg, #eee 40%, #fafafa 50%, #eee 60%);
