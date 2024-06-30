@@ -15,7 +15,10 @@ module.exports = {
       ],
     }),
     new webpack.DefinePlugin({
-      'process.env.name': JSON.stringify('production'),
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+        STRIPE_API_KEY: JSON.stringify('pk_live_51LZw7yCXAiCSgrbhrY39eP6dasTeOe3Y6V33Wx0spRIW9OiyM6NrnCzEAd6IbXknaKTT9TUchOnyrjZs6TQRhloY00fc87zgvn'),
+      },
     }),
   ],
 }

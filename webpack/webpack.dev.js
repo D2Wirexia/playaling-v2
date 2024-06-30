@@ -22,7 +22,10 @@ module.exports = {
       ],
     }),
     new webpack.DefinePlugin({
-      'process.env.name': JSON.stringify('development'),
+      'process.env': {
+        NODE_ENV: JSON.stringify('development'),
+        STRIPE_API_KEY: JSON.stringify('pk_test_51LZw7yCXAiCSgrbhzuTX6GqooXqH2E01x12FZV5Ev5vvDlvyeMxb6ZfzcQ64xxsfcnJvxFjJE4MrP91VjAN1gmAM00aA4GnJkt'),
+      },
     }),
     new ReactRefreshWebpackPlugin(),
   ],

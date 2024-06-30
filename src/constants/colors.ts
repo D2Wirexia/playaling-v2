@@ -8,6 +8,7 @@ export enum Color {
   LightPeriwinkle = '#C2CCDB',
   CoolGray = '#8492A8',
   Quartz = '#484D5B',
+  AuroMetalSaurus = '#697183',
   EerieBlack = '#191B1F',
   Unbleached = '#FFDBC5',
   Mandarin = '#ED8547',
@@ -18,4 +19,5 @@ export enum Color {
   VenetianSienna = '#E26D52',
   AppleGreen = '#70B202',
   GreenSheen = '#61BF9A',
+  FireOpal = '#DF5252',
 }

@@ -8,5 +8,5 @@ export * from './ToastMessage'
 export * from './TabBar'
 export * from './Loader'
 export * from './DropDown'
-// Loader export
 export * from './Tooltip'
+export * from './Input'
